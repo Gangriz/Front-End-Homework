@@ -1,0 +1,27 @@
+{{outlet}}
+<h1>Contact</h1>
+<div class="submitForm text-center">
+  <h2>Submit Form</h2>
+
+  <br/><br/>
+
+<p>If you want to contact us fill out this form and we will get back to you.</p>
+
+<div class="form-horizontal form-group form-group-lg row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{input type="email" value=emailAddress class="form-control" placeholder="Please type your email address." autofocus="autofocus"}}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{textarea id=userMsg class="form-control" placeholder="Please type your message here. (At least 5 chatacters.)" rows=7}}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+    <button class="btn btn-primary btn-lg btn-block" {{action 'sendMessage'}} enabled={{isNotValidMsg}}>Send Message</button>
+  </div>
+</div>
+
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
+
+<br/><br/>
+</div>
